@@ -122,10 +122,10 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
         address.sin6_len = sizeof(address);
         address.sin6_family = AF_INET6;
 #else
-        struct sockaddr_in address;              struct sockaddr_in address;
-        bzero(&address, sizeof(address));              bzero(&address, sizeof(address));
-        address.sin_len = sizeof(address);              address.sin_len = sizeof(address);
-        address.sin_family = AF_INET;              address.sin_family = AF_INET;
+        struct sockaddr_in address;
+        bzero(&address, sizeof(address));
+        address.sin_len = sizeof(address);
+        address.sin_family = AF_INET;
 #endif
 
         _sharedManager = [self managerForAddress:&address];
